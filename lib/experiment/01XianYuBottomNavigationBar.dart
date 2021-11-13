@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-
-
-///ClipRRect用于实现圆角效果，可以设置圆角的大小。
-///
+//模仿咸鱼的底部bar
 /// 实现代码如下，非常简单：
 void main() {
   runApp( MyApp());
@@ -13,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home : ContentBody(),
+      home : ContentBody(),
     );
   }
 }
@@ -45,7 +42,7 @@ class ContentBodyState extends State<ContentBody>{
         title: Text("ListView展示"),
       ),
       body: ListView.builder(
-        itemCount: 100,
+          itemCount: 100,
           itemExtent: 60,
           controller: _controller,
           itemBuilder: (BuildContext context,int index){
@@ -90,9 +87,9 @@ class FloatingActionButtonDemo extends StatelessWidget{
       height: 70,
       width: 70,
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.white,width: 5),
-        borderRadius: BorderRadius.circular(40),
-        color: Colors.white
+          border: Border.all(color: Colors.white,width: 5),
+          borderRadius: BorderRadius.circular(40),
+          color: Colors.white
       ),
       child: FloatingActionButton(
         elevation: 1.0,
