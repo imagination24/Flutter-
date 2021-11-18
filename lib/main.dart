@@ -40,27 +40,30 @@ class ContentBodyState extends State<ContentBody>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white38,
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("ListView展示"),
+        title: Text("ECH0",style: TextStyle(fontSize: 20,fontStyle: FontStyle.italic),),
+        centerTitle: true,
+        backgroundColor: Colors.indigoAccent,
       ),
       body: ListView.builder(
         itemCount: 100,
           itemExtent: 60,
           controller: _controller,
           itemBuilder: (BuildContext context,int index){
-            return ListTile(title: Text("item$index"),tileColor: Colors.white38,);
+            return ListTile(title: Text("item$index"),tileColor: Colors.white38,leading: CircleAvatar(backgroundImage: NetworkImage("https://upload-images.jianshu.io/upload_images/2391067-877d01cd30d6efcb?imageMogr2/auto-orient/strip|imageView2/2/w/522/format/webp"),),);
           }),
-      bottomNavigationBar: BottomNavigationBar(
-        selectedFontSize: 12,
-        unselectedFontSize: 12,
-        unselectedItemColor: Colors.black,
-        selectedItemColor: Colors.yellow,
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home),title: Text("Home")),
-          BottomNavigationBarItem(icon: Icon(Icons.add,color: Colors.white,),title: Text("publish")),
-          BottomNavigationBarItem(icon: Icon(Icons.settings),title: Text("Setting")),
-        ],
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.indigoAccent,
+        shape:CircularNotchedRectangle(),
+        child: Container(
+          padding: EdgeInsets.fromLTRB(0, 70, 0, 0),
+          child: Row(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+          ],)
+        ),
       ),
       floatingActionButton: FloatingActionButtonDemo(),
       floatingActionButtonLocation: CustomFloatingActionButtonLocation(FloatingActionButtonLocation.centerDocked,0,20),
@@ -85,8 +88,6 @@ class FloatingActionButtonDemo extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(3),
-      margin: EdgeInsets.only(top: 2),
       height: 70,
       width: 70,
       decoration: BoxDecoration(
@@ -96,10 +97,10 @@ class FloatingActionButtonDemo extends StatelessWidget{
       ),
       child: FloatingActionButton(
         elevation: 1.0,
-        backgroundColor: Colors.yellow,
+        backgroundColor: Colors.indigoAccent,
         child: Icon(
           Icons.add,
-          color: Colors.black,
+          color: Colors.white,
           size: 30,
         ),
         onPressed: (){},
